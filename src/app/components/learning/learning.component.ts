@@ -21,6 +21,9 @@ export class LearningComponent implements OnInit {
   displayVowel: Vowel = null;
   prevVowel: Vowel = null;
   inOrder = true;
+  groups = [];
+
+  consonants = ['p', 'b', 't', 'd', 'k', 'c', 'g', 's', 'z', 'f', 'c', 'm', 'n', 'h', 'l', 'r', 'w', 'y'];
 
   userVowels: Vowel[] = [
 { vowel: 'i', display: 'i', vowelGroup: 1, correct: 0, sessionsCorrect: 0, correctDate: 0, level: 0, consonantLevel: 0, position: 0 },
@@ -37,7 +40,7 @@ export class LearningComponent implements OnInit {
 { vowel: 'ea', display: 'ea', vowelGroup: 2, correct: 0, sessionsCorrect: 0, correctDate: 0, level: 0, consonantLevel: 0, position: 11 },
 { vowel: 'ue', display: 'ue', vowelGroup: 2, correct: 0, sessionsCorrect: 0, correctDate: 0, level: 0, consonantLevel: 0, position: 12 },
 { vowel: 'oa', display: 'oa', vowelGroup: 2, correct: 0, sessionsCorrect: 0, correctDate: 0, level: 0, consonantLevel: 0, position: 13 },
-{ vowel: 'oe', display: 'eu', vowelGroup: 2, correct: 0, sessionsCorrect: 0, correctDate: 0, level: 0, consonantLevel: 0, position: 14 },
+{ vowel: 'oe', display: 'oe', vowelGroup: 2, correct: 0, sessionsCorrect: 0, correctDate: 0, level: 0, consonantLevel: 0, position: 14 },
 { vowel: 'au', display: 'au', vowelGroup: 3, correct: 0, sessionsCorrect: 0, correctDate: 0, level: 0, consonantLevel: 0, position: 15 },
 { vowel: 'aw', display: 'aw', vowelGroup: 3, correct: 0, sessionsCorrect: 0, correctDate: 0, level: 0, consonantLevel: 0, position: 16 },
 { vowel: 'ou', display: 'ou', vowelGroup: 3, correct: 0, sessionsCorrect: 0, correctDate: 0, level: 0, consonantLevel: 0, position: 17 },
@@ -47,13 +50,19 @@ export class LearningComponent implements OnInit {
 { vowel: 'ar', display: 'ar', vowelGroup: 4, correct: 0, sessionsCorrect: 0, correctDate: 0, level: 0, consonantLevel: 0, position: 21 },
 { vowel: 'ir', display: 'ir', vowelGroup: 4, correct: 0, sessionsCorrect: 0, correctDate: 0, level: 0, consonantLevel: 0, position: 22 },
 { vowel: 'er', display: 'er', vowelGroup: 4, correct: 0, sessionsCorrect: 0, correctDate: 0, level: 0, consonantLevel: 0, position: 23 },
-{ vowel: 'ur', display: 'eu', vowelGroup: 4, correct: 0, sessionsCorrect: 0, correctDate: 0, level: 0, consonantLevel: 0, position: 24 },
+{ vowel: 'ur', display: 'ur', vowelGroup: 4, correct: 0, sessionsCorrect: 0, correctDate: 0, level: 0, consonantLevel: 0, position: 24 },
   ];
 
   constructor() { }
 
   ngOnInit() {
     this.showVowel();
+    this.userVowels.forEach(v => {
+      this.consonants.forEach(c => {
+        this.groups.push(`${ v.display }${ c } `);
+        this.groups.push(`${ c }${ v.display } `);
+      });
+    });
   }
 
   getVowelSet(vg = this.vowelGroup) {

@@ -1,1 +1,12 @@
-<p>learning works!</p>
+<div class="vowel-box-outter w-100" fxLayout="column" fxLayoutAlign="center center">
+  <div class="vowel-box" fxLayout="column" fxLayoutAlign="center center">
+    <div class="vowel-tile mb-md" [style.background-color]="getColor(displayVowel)" fxLayout="column" fxLayoutAlign="center center">
+      <p class="display-vowel">{{ displayVowel?.display }}</p>
+    </div>
+    <div>
+      <button class="mr-sm" (click)="correct(displayVowel.vowel, displayVowel.level)">Correct</button>
+      <button class="ml-sm" (click)="incorrect(displayVowel)">Incorrect</button>
+    </div>
+  </div>
+  <textarea id= "json" rows = "20" cols = "80" ></textarea>
+</div>
