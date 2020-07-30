@@ -4,9 +4,8 @@
       <p class="display-vowel">{{ displayVowel?.display }}</p>
     </div>
     <div>
-      <button class="mr-sm" (click)="correct(displayVowel.vowel, displayVowel.level)">Correct</button>
+      <button class="mr-sm" (click)="correct(displayVowel.vowel)">Correct</button>
       <button class="ml-sm" (click)="incorrect(displayVowel)">Incorrect</button>
     </div>
   </div>
-  <textarea id= "json" rows = "20" cols = "80" ></textarea>
 </div>
