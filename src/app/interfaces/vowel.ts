@@ -4,9 +4,5 @@ export interface Vowel {
   display: string;
   vowelGroup: number;
   correct: number;
-  sessionsCorrect: number;
-  correctDate: number;
-  level: number;
-  consonantLevel: number;
   position: number;
 }
