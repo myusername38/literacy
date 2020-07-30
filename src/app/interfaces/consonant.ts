@@ -5,4 +5,5 @@ export interface Consonant {
   consonantGroup: number;
   correct: number;
   position: number;
+  shown: number;
 }

@@ -17,31 +17,36 @@ export class ConsonantComponent implements OnInit {
   inOrder = true;
 
   userConsonants: Consonant[] = [
-  { consonant: 'i', display: 'i', consonantGroup: 1, correct: 0, position: 0 },
-  { consonant: 'e', display: 'e', consonantGroup: 1, correct: 0, position: 1 },
-  { consonant: 'a', display: 'a', consonantGroup: 1, correct: 0, position: 2 },
-  { consonant: 'u', display: 'u', consonantGroup: 1, correct: 0, position: 3 },
-  { consonant: 'o', display: 'o', consonantGroup: 1, correct: 0, position: 4 },
-  { consonant: 'oo', display: 'oo', consonantGroup: 1, correct: 0, position: 5 },
-  { consonant: 'o_o', display: 'oo L', consonantGroup: 1, correct: 0, position: 6 },
-  { consonant: 'ai', display: 'ai', consonantGroup: 2, correct: 0, position: 7 },
-  { consonant: 'ay', display: 'ay', consonantGroup: 2, correct: 0, position: 8 },
-  { consonant: 'ie', display: 'ie', consonantGroup: 2, correct: 0, position: 9 },
-  { consonant: 'ee', display: 'ee', consonantGroup: 2, correct: 0, position: 10 },
-  { consonant: 'ea', display: 'ea', consonantGroup: 2, correct: 0, position: 11 },
-  { consonant: 'ue', display: 'ue', consonantGroup: 2, correct: 0, position: 12 },
-  { consonant: 'oa', display: 'oa', consonantGroup: 2, correct: 0, position: 13 },
-  { consonant: 'oe', display: 'oe', consonantGroup: 2, correct: 0, position: 14 },
-  { consonant: 'au', display: 'au', consonantGroup: 3, correct: 0, position: 15 },
-  { consonant: 'aw', display: 'aw', consonantGroup: 3, correct: 0, position: 16 },
-  { consonant: 'ou', display: 'ou', consonantGroup: 3, correct: 0, position: 17 },
-  { consonant: 'oy', display: 'oy', consonantGroup: 3, correct: 0, position: 18 },
-  { consonant: 'oi', display: 'oi', consonantGroup: 3, correct: 0, position: 19 },
-  { consonant: 'or', display: 'or', consonantGroup: 4, correct: 0, position: 20 },
-  { consonant: 'ar', display: 'ar', consonantGroup: 4, correct: 0, position: 21 },
-  { consonant: 'ir', display: 'ir', consonantGroup: 4, correct: 0, position: 22 },
-  { consonant: 'er', display: 'er', consonantGroup: 4, correct: 0, position: 23 },
-  { consonant: 'ur', display: 'ur', consonantGroup: 4, correct: 0, position: 24 },
+  { consonant: 'h', display: 'h', consonantGroup: 1, correct: 0, shown: 0, position: 0 },
+  { consonant: 'm', display: 'm', consonantGroup: 2, correct: 0, shown: 0, position: 1 },
+  { consonant: 'n', display: 'n', consonantGroup: 2, correct: 0, shown: 0, position: 2 },
+  { consonant: 'p', display: 'p', consonantGroup: 3, correct: 0, shown: 0, position: 3 },
+  { consonant: 'b', display: 'b', consonantGroup: 3, correct: 0, shown: 0, position: 4 },
+  { consonant: 't', display: 't', consonantGroup: 4, correct: 0, shown: 0, position: 5 },
+  { consonant: 'd', display: 'd', consonantGroup: 4, correct: 0, shown: 0, position: 6 },
+  { consonant: 's', display: 's', consonantGroup: 5, correct: 0, shown: 0, position: 7 },
+  { consonant: 'z', display: 'z', consonantGroup: 5, correct: 0, shown: 0, position: 8 },
+  { consonant: 'f', display: 'f', consonantGroup: 6, correct: 0, shown: 0, position: 9 },
+  { consonant: 'v', display: 'v', consonantGroup: 6, correct: 0, shown: 0, position: 10 },
+  { consonant: 'k', display: 'k', consonantGroup: 7, correct: 0, shown: 0, position: 11 },
+  { consonant: 'c', display: 'c', consonantGroup: 7, correct: 0, shown: 0, position: 12 },
+  { consonant: 'g', display: 'g', consonantGroup: 7, correct: 0, shown: 0, position: 13 },
+  { consonant: 'w', display: 'w', consonantGroup: 8, correct: 0, shown: 0, position: 14 },
+  { consonant: 'l', display: 'l', consonantGroup: 8, correct: 0, shown: 0, position: 15 },
+  { consonant: 'r', display: 'r', consonantGroup: 8, correct: 0, shown: 0, position: 16 },
+  { consonant: 'sh', display: 'sh', consonantGroup: 9, correct: 0, shown: 0, position: 17 },
+  { consonant: 'j', display: 'j', consonantGroup: 9, correct: 0, shown: 0, position: 18 },
+  { consonant: 'x', display: 'x', consonantGroup: 10, correct: 0, shown: 0, position: 19 },
+  { consonant: 'y', display: 'y', consonantGroup: 10, correct: 0, shown: 0, position: 20 },
+  { consonant: 'ch', display: 'ch', consonantGroup: 11, correct: 0, shown: 0, position: 21 },
+  { consonant: 'th', display: 'th', consonantGroup: 12, correct: 0, shown: 0, position: 22 },
+  { consonant: 'ck', display: 'ck', consonantGroup: 13, correct: 0, shown: 0, position: 23 },
+  { consonant: 'gh', display: 'gh', consonantGroup: 13, correct: 0, shown: 0, position: 24 },
+  { consonant: 'ng', display: 'ng', consonantGroup: 14, correct: 0, shown: 0, position: 25 },
+  { consonant: 'ph', display: 'ph', consonantGroup: 14, correct: 0, shown: 0, position: 26 },
+  { consonant: 'tw', display: 'tw', consonantGroup: 14, correct: 0, shown: 0, position: 27 },
+  { consonant: 'wh', display: 'wh', consonantGroup: 15, correct: 0, shown: 0, position: 28 },
+  { consonant: 'gu', display: 'gu', consonantGroup: 15, correct: 0, shown: 0, position: 29 },
   ];
 
   constructor() { }
@@ -151,5 +156,42 @@ export class ConsonantComponent implements OnInit {
       return '#fffff';
     }
   }
+
+/* LOGIC
+
+    let complete = [30]; // <--- these two arrays hold all the consonants under their respective area
+    let incomplete = [30]; // these will be those kinds of public variables that are part of a class i think they called instance variables
+
+
+    // WE Run this for loop/clear every time we introduce a new group in
+
+  getConsonantStatus() {
+    complete.clear();
+    incomplete.clear();
+    for (int i = 0; i < 30; i++) {
+      if (this.consonant.correct >= timesCorrect) {
+        complete[complete.length] = this.consonant;
+      } else {
+        incomplete[incomplete.length] = this.consonant;
+      }
+    }
+  }
+
+  // OK NOW we got the list so the below is run whenenver we need the next consonant
+
+  getNextConsonant() {
+    const letsPick = Math.Random(1,10);
+    let consonant;
+    if (letsPick <= 2) {
+      const pickAgain = Math.Random(1, complete.length);
+      consonant = complete[pickAgain];
+    } else {
+      const pickAgain = Math.Random(1, incomplete.length);
+      consonant = complete[pickAgain];
+    }
+    showConsonant(consonant);
+  }
+
+*/
 
 }
