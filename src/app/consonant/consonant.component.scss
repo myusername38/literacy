@@ -1,0 +1,25 @@
+@import '../../../vars.scss';
+
+.vowel-box-height{
+  height: 95vh;
+  background-color:white;
+}
+
+.vowel-box {
+  width: 800px;
+  height: 500px;
+  background-color: #CDD7D6;
+  border-radius: 4px;
+}
+
+.vowel-tile {
+  color: white;
+  height: 40px;
+  width: 40px;
+  border-radius: 8px;
+}
+
+.display-vowel {
+  margin: 0px;
+}
+

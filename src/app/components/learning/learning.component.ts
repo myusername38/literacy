@@ -150,4 +150,5 @@ export class LearningComponent implements OnInit {
       return '#fffff';
     }
   }
+
 }
