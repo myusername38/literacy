@@ -1,11 +1,11 @@
 <div class="vowel-box-outter w-100" fxLayout="column" fxLayoutAlign="center center">
   <div class="vowel-box" fxLayout="column" fxLayoutAlign="center center">
-    <div class="vowel-tile mb-md" [style.background-color]="getColor(displayConsonant)" fxLayout="column" fxLayoutAlign="center center">
-      <p class="display-vowel">{{ displayConsonant?.display }}</p>
+    <div class="vowel-tile mb-md" *ngFor="let tile of displayTiles" [style.background-color]="tile.color" fxLayout="column" fxLayoutAlign="center center">
+      <p class="display-vowel">{{ tile?.display }}</p>
     </div>
     <div>
-      <button class="mr-sm" (click)="correct(displayConsonant.consonant)">Correct</button>
-      <button class="ml-sm" (click)="incorrect(displayConsonant)">Incorrect</button>
+      <button class="mr-sm" (click)="correct()">Correct</button>
+      <button class="ml-sm" (click)="incorrect()">Incorrect</button>
     </div>
   </div>
 </div>

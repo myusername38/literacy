@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Vowel } from '../../interfaces/vowel';
 import { IsolatedVowelsService } from '../../services/isolated-vowels.service';
 import { Tile } from '../../interfaces/tile';
 
