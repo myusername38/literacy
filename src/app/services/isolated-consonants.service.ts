@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Consonant } from '../interfaces/consonant';
 import { Tile } from '../interfaces/tile';
+import { ConsonantComponent } from '../consonant/consonant.component';
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +17,7 @@ export class IsolatedConsonantsService {
   inOrder = true;
   complete = [];
   incomplete = [];
+  first = 1;
 
 
   userConsonants: Consonant[] = [
@@ -58,7 +60,13 @@ export class IsolatedConsonantsService {
   }
 
   showConsonant() {
-    this.displayConsonant = this.getNextConsonant();
+    if (this.first === 0) {
+      this.displayConsonant = this.userConsonants.find(v => v.position === 0);
+      console.log('here');
+      this.first = 1;
+    } else {
+      this.displayConsonant = this.getNextConsonant();
+    }
     const returnTile = {
       id: this.displayConsonant.consonant,
       display: this.displayConsonant.display,
@@ -69,18 +77,17 @@ export class IsolatedConsonantsService {
   getConsonantsStatus() {
     this.complete = [];
     this.incomplete = [];
-    for (let i = 0; i < 30; i++) {
-      const consonant = this.userConsonants.find(c => c.position === i);
+    this.userConsonants.forEach(consonant => {
       if (consonant.consonantGroup > this.consonantGroup) {
         return;
       } else {
         if (consonant.correct >= this.timesCorrect) {
           this.complete[this.complete.length] = consonant;
-        } else if (consonant.consonantGroup <= this.consonantGroup){
+        } else {
           this.incomplete[this.incomplete.length] = consonant;
         }
-    }
-    }
+      }
+    });
   }
 
   getNextConsonant() {
