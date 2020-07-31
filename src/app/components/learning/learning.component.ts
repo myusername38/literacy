@@ -12,10 +12,10 @@ export class LearningComponent implements OnInit {
 
   displayTiles: Tile[] = [];
 
-  constructor(private isolatedVowelsService: IsolatedConsonantsService) { }
+  constructor(private isolatedVowelsService: IsolatedVowelsService) { }
 
   ngOnInit() {
-    this.displayTiles = this.isolatedVowelsService.showConsonant();
+    this.displayTiles = this.isolatedVowelsService.getVowel();
     console.log(this.displayTiles);
     console.log(this.displayTiles[0].color);
   }
