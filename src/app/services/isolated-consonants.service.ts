@@ -5,6 +5,7 @@ import { Consonant } from '../interfaces/consonant';
   providedIn: 'root'
 })
 export class IsolatedConsonantsService {
+
   timesCorrect = 2; // number to hit for the consonant to be correct for the session
 
   incorrectConsonants: Consonant[] = null;
@@ -145,11 +146,33 @@ export class IsolatedConsonantsService {
       return '#FF5A5F';
     case 4:
       return '#8332AC';
+    case 5:
+      return '#006E90';
+    case 6:
+      return '#F18F01';
+    case 7:
+      return '#FF5A5F';
+    case 8:
+      return '#8332AC';
+    case 9:
+      return '#006E90';
+    case 10:
+      return '#F18F01';
+    case 11:
+      return '#FF5A5F';
+    case 12:
+      return '#8332AC';
+    case 13:
+      return '#006E90';
+    case 14:
+      return '#F18F01';
+    case 15:
+      return '#FF5A5F';
     default:
       return '#fffff';
     }
   }
-
+}
 /* LOGIC
 
     let complete = [30]; // <--- these two arrays hold all the consonants under their respective area
@@ -186,4 +209,3 @@ export class IsolatedConsonantsService {
   }
 
 */
-}
