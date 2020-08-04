@@ -9,7 +9,7 @@ import { LearningComponent } from './components/learning/learning.component';
 @NgModule({
   declarations: [
     AppComponent,
-    LearningComponent
+    LearningComponent,
   ],
   imports: [
     BrowserModule,
