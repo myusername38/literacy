@@ -21,7 +21,6 @@ export class LearningComponent implements OnInit {
 
   correct() {
     this.displayTiles = this.isolatedConsonantsService.correct();
-    console.log(this.displayTiles);
   }
 
   incorrect() {

@@ -6,10 +6,11 @@ import { Tile } from '../interfaces/tile';
   providedIn: 'root'
 })
 export class IsolatedConsonantsService {
-  timesCorrect = 2; // number to hit for the consonant to be correct for the session
+  timesCorrect = 3; // number to hit for the consonant to be correct for the session
   minShown = 5; // min number to show at one time
   showAgain = 0;
   startingGroup = 2;
+  correctOdds = 8.5;
 
   introduceConsonants: Consonant[] = null;
   correctConsonants: Consonant[] = [];
@@ -21,36 +22,37 @@ export class IsolatedConsonantsService {
   inOrder = true;
 
   userConsonants: Consonant[] = [
-  { consonant: 'h', display: 'h', consonantGroup: 1, correct: 0, position: 0 },
-  { consonant: 'm', display: 'm', consonantGroup: 2, correct: 0, position: 1 },
-  { consonant: 'n', display: 'n', consonantGroup: 2, correct: 0, position: 2 },
-  { consonant: 'p', display: 'p', consonantGroup: 3, correct: 0, position: 3 },
-  { consonant: 'b', display: 'b', consonantGroup: 3, correct: 0, position: 4 },
-  { consonant: 't', display: 't', consonantGroup: 3, correct: 0, position: 5 },
-  { consonant: 'd', display: 'd', consonantGroup: 3, correct: 0, position: 6 },
-  { consonant: 's', display: 's', consonantGroup: 4, correct: 0, position: 7 },
-  { consonant: 'z', display: 'z', consonantGroup: 4, correct: 0, position: 8 },
-  { consonant: 'f', display: 'f', consonantGroup: 5, correct: 0, position: 9 },
-  { consonant: 'v', display: 'v', consonantGroup: 5, correct: 0, position: 10 },
-  { consonant: 'k', display: 'k', consonantGroup: 6, correct: 0, position: 11 },
-  { consonant: 'c', display: 'c', consonantGroup: 6, correct: 0, position: 12 },
-  { consonant: 'g', display: 'g', consonantGroup: 6, correct: 0, position: 13 },
-  { consonant: 'w', display: 'w', consonantGroup: 7, correct: 0, position: 14 },
-  { consonant: 'l', display: 'l', consonantGroup: 7, correct: 0, position: 15 },
-  { consonant: 'r', display: 'r', consonantGroup: 7, correct: 0, position: 16 },
-  { consonant: 'sh', display: 'sh', consonantGroup: 8, correct: 0, position: 17 },
-  { consonant: 'j', display: 'j', consonantGroup: 8, correct: 0, position: 18 },
-  { consonant: 'x', display: 'x', consonantGroup: 9, correct: 0, position: 19 },
-  { consonant: 'y', display: 'y', consonantGroup: 9, correct: 0, position: 20 },
-  { consonant: 'ch', display: 'ch', consonantGroup: 10, correct: 0, position: 21 },
-  { consonant: 'th', display: 'th', consonantGroup: 11, correct: 0, position: 22 },
-  { consonant: 'ck', display: 'ck', consonantGroup: 12, correct: 0, position: 23 },
-  { consonant: 'gh', display: 'gh', consonantGroup: 12, correct: 0, position: 24 },
-  { consonant: 'ng', display: 'ng', consonantGroup: 13, correct: 0, position: 25 },
-  { consonant: 'ph', display: 'ph', consonantGroup: 13, correct: 0, position: 26 },
-  { consonant: 'tw', display: 'tw', consonantGroup: 13, correct: 0, position: 27 },
-  { consonant: 'wh', display: 'wh', consonantGroup: 14, correct: 0, position: 28 },
-  { consonant: 'gu', display: 'gu', consonantGroup: 14, correct: 0, position: 29 },
+  { consonant: 'h', display: 'h', consonantGroup: 1, correct: 0, position: 0, family: 0 },
+  { consonant: 'm', display: 'm', consonantGroup: 2, correct: 0, position: 1, family: 0 },
+  { consonant: 'n', display: 'n', consonantGroup: 2, correct: 0, position: 2, family: 0 },
+  { consonant: 'p', display: 'p', consonantGroup: 3, correct: 0, position: 3, family: 1 },
+  { consonant: 'b', display: 'b', consonantGroup: 3, correct: 0, position: 4, family: 2 },
+  { consonant: 't', display: 't', consonantGroup: 3, correct: 0, position: 5, family: 1 },
+  { consonant: 'd', display: 'd', consonantGroup: 3, correct: 0, position: 6, family: 2 },
+  { consonant: 's', display: 's', consonantGroup: 4, correct: 0, position: 7, family: 1 },
+  { consonant: 'z', display: 'z', consonantGroup: 4, correct: 0, position: 8, family: 2 },
+  { consonant: 'f', display: 'f', consonantGroup: 5, correct: 0, position: 9, family: 1 },
+  { consonant: 'v', display: 'v', consonantGroup: 5, correct: 0, position: 10, family: 2 },
+  { consonant: 'k', display: 'k', consonantGroup: 6, correct: 0, position: 11, family: 1 },
+  { consonant: 'c', display: 'c', consonantGroup: 6, correct: 0, position: 12, family: 1 },
+  { consonant: 'g', display: 'g', consonantGroup: 6, correct: 0, position: 13, family: 2 },
+  { consonant: 'w', display: 'w', consonantGroup: 7, correct: 0, position: 14, family: 0 },
+  { consonant: 'l', display: 'l', consonantGroup: 7, correct: 0, position: 15, family: 0 },
+  { consonant: 'r', display: 'r', consonantGroup: 7, correct: 0, position: 16, family: 0 },
+  { consonant: 'sh', display: 'sh', consonantGroup: 8, correct: 0, position: 17, family: 0 },
+  { consonant: 'ch', display: 'ch', consonantGroup: 8, correct: 0, position: 18, family: 0 },
+  { consonant: 'j', display: 'j', consonantGroup: 8, correct: 0, position: 19, family: 0 },
+  { consonant: 'x', display: 'x', consonantGroup: 9, correct: 0, position: 20, family: 0 },
+  { consonant: 'y', display: 'y', consonantGroup: 9, correct: 0, position: 21, family: 0 },
+  { consonant: 'wh', display: 'wh', consonantGroup: 10, correct: 0, position: 22, family: 0 },
+  { consonant: 'tw', display: 'tw', consonantGroup: 10, correct: 0, position: 23, family: 0 },
+  { consonant: 'th', display: 'th', consonantGroup: 11, correct: 0, position: 24, family: 0 },
+  { consonant: 'th', display: 'th_', consonantGroup: 11, correct: 0, position: 25, family: 0 },
+  { consonant: 'qu', display: 'qu', consonantGroup: 11, correct: 0, position: 26, family: 0 },
+  { consonant: 'gh', display: 'gh', consonantGroup: 11, correct: 0, position: 27, family: 0 },
+  { consonant: 'ph', display: 'ph', consonantGroup: 12, correct: 0, position: 28, family: 0 },
+  { consonant: 'ck', display: 'ck', consonantGroup: 12, correct: 0, position: 29, family: 0 },
+  { consonant: 'ng', display: 'ng', consonantGroup: 12, correct: 0, position: 30, family: 0 },
   ];
 
   constructor() { }
@@ -63,7 +65,6 @@ export class IsolatedConsonantsService {
     this.learningConsonants = [];
     this.introduceConsonants = this.userConsonants.filter(consonant => consonant.consonantGroup <= this.startingGroup);
     this.introduceConsonants = this.introduceConsonants.sort((a, b) => b.position - a.position);
-    console.log(this.introduceConsonants);
   }
 
   getConsonant() {
@@ -76,13 +77,21 @@ export class IsolatedConsonantsService {
       if (!this.introduceConsonants[0]) {  // don't know if i need this right now
         this.introduceConsonants = null;
       }
-      const rt = { id: this.prevConsonant.consonant, display: this.prevConsonant.display, color: '#54C6EB' } as Tile;
+      const rt = { id: this.prevConsonant.consonant, display: this.prevConsonant.display, color: this.getColor(this.prevConsonant) };
       return [rt];
     }
     let nextConsonant = null;
-    let consonantSet = this.learningConsonants;
-    if (this.incorrectConsonants) {
-      consonantSet = this.learningConsonants.concat(this.incorrectConsonants);
+    let consonantSet = null;
+    let correctCon = false;
+    if (this.correctConsonants.length > 4 && Math.random() * 10 > this.correctOdds) {
+      consonantSet = this.correctConsonants;
+      correctCon = true;
+    } else {
+      this.incorrectConsonants ? consonantSet = this.learningConsonants.concat(this.incorrectConsonants)
+                               : consonantSet = this.learningConsonants;
+    }
+    if (!consonantSet[0]) {
+      return [{ id: 'passed', display: 'passed', color: '#ffffff' }];
     }
     // doubling the odds the incorrect ones show up
     nextConsonant = consonantSet[Math.floor(Math.random() * consonantSet.length)];
@@ -90,7 +99,7 @@ export class IsolatedConsonantsService {
       nextConsonant = consonantSet[Math.floor(Math.random() * consonantSet.length)];
     }
     this.prevConsonant = nextConsonant;
-    const returnTile = { id: nextConsonant.consonant, display: nextConsonant.display, color: '#54C6EB' } as Tile;
+    const returnTile = { id: nextConsonant.consonant, display: nextConsonant.display, color: this.getColor(this.prevConsonant) };
     return [returnTile];
   }
 
@@ -98,6 +107,10 @@ export class IsolatedConsonantsService {
     this.prevConsonant.correct++;
     if (this.introduceConsonants) {
       return this.getConsonant(); // do nothing;
+    }
+
+    if (this.incorrectConsonants) {
+      this.incorrectConsonants = this.incorrectConsonants.filter(consonant => consonant.position !== this.prevConsonant.position);
     }
 
     if (this.prevConsonant.correct > this.timesCorrect) {
@@ -111,14 +124,14 @@ export class IsolatedConsonantsService {
       if (completeGroup && checkConsonants[0]) {
         this.correctConsonants = this.correctConsonants.concat(checkConsonants);
         this.learningConsonants = this.learningConsonants.filter(con => con.consonantGroup !== this.prevConsonant.consonantGroup);
-        this.addNextGroup();
+        this.addNextGroup(this.prevConsonant.consonantGroup);
       }
     }
     return this.getConsonant();
   }
 
-  addNextGroup() {
-    let highGroup = this.learningConsonants[0].consonantGroup;
+  addNextGroup(hg = this.learningConsonants[0].consonantGroup) {
+    let highGroup = hg;
     this.learningConsonants.forEach(consonant => {
       if (consonant.consonantGroup > highGroup) {
         highGroup = consonant.consonantGroup;
@@ -144,26 +157,28 @@ export class IsolatedConsonantsService {
       this.incorrectConsonants.push(incorrectConsonant);
     }
 
-    if (incorrectConsonant.correct < this.showAgain) {
+    if (incorrectConsonant.correct < this.showAgain && this.correctConsonants.includes(incorrectConsonant)) {
       /* if its be or d make sure both are added */
-      this.correctConsonants = this.correctConsonants.filter(consonant => consonant.position !== incorrectConsonant.position);
-      this.learningConsonants.push(incorrectConsonant);
+      if (incorrectConsonant.consonant === 'b' || incorrectConsonant.consonant === 'd') {
+        this.correctConsonants = this.correctConsonants.filter(consonant => consonant.consonant !== 'b' && consonant.consonant !== 'd');
+        this.learningConsonants.push(this.userConsonants.find(consonant => consonant.consonant === 'b'));
+        this.learningConsonants.push(this.userConsonants.find(consonant => consonant.consonant === 'd'));
+      } else {
+        this.correctConsonants = this.correctConsonants.filter(consonant => consonant.position !== incorrectConsonant.position);
+        this.learningConsonants.push(incorrectConsonant);
+      }
     }
     return this.getConsonant();
   }
 
   getColor(consonant: Consonant) {
-    switch (consonant.consonantGroup) {
+    switch (consonant.family) {
     case 1:
-      return '#006E90';
+      return '#3891A6';
     case 2:
-      return '#F18F01';
-    case 3:
-      return '#FF5A5F';
-    case 4:
-      return '#8332AC';
+      return '#F2C14E';
     default:
-      return '#fffff';
+      return '#000000';
     }
   }
 }
